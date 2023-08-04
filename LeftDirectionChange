@@ -1,0 +1,23 @@
+public class LeftDirectionChange implements DirectionChange {
+    private Direction currentDirection;
+
+    public LeftDirectionChange(Direction currentDirection) {
+        this.currentDirection = currentDirection;
+    }
+
+    @Override
+    public Direction changeDirection() {
+        switch (currentDirection) {
+            case N:
+                return Direction.W;
+            case S:
+                return Direction.E;
+            case E:
+                return Direction.N;
+            case W:
+                return Direction.S;
+            default:
+                return currentDirection;
+        }
+    }
+}
